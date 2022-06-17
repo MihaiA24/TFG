@@ -1,0 +1,48 @@
+[['../VisionLab/Tensorflow/model_reduced_jac_jac_sizeX2_10ep_lr5E5_batch16_new_jac.h5',
+[0.12202790379524231, 0.8779716491699219]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_80ep_lr1E4_batch16_new_jac_VAR_MAYOR30_BATCH.h5',
+  [0.04140137881040573, 0.9585968255996704, 0.9787890315055847]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_50ep_lr1E4_batch16_new_jac_VAR_MAYOR30_BATCH.h5',
+  [0.042360372841358185, 0.9576391577720642, 0.978291392326355]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_20ep_lr5E5_var_batch16_new_jac.h5',
+  [0.044247161597013474, 0.9557503461837769, 0.977300226688385]],
+ ['../VisionLab/Tensorflow/model_reduced_bce_jac_sizeX2_10ep_lr1E4_batch16.h5',
+  [0.0060990131460130215, 0.8676043748855591]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_100ep_lr1E4_batch16_new_jac_VAR_MAYOR15_BATCH.h5',
+  [0.04066058248281479, 0.9593390226364136, 0.9791765213012695]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_50ep_lr5E5_batch16_new_jac_VAR_MAYOR30_BATCH.h5',
+  [0.04296335577964783, 0.9570361971855164, 0.9779698848724365]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_100ep_lr1E4_batch16_new_jac_VAR_MAYOR30_BATCH.h5',
+  [0.04164695367217064, 0.9583516120910645, 0.978661298751831]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_sizeX2_10ep_lr5E5_batch16_verdad.h5',
+  [0.049165673553943634, 0.9508318305015564]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_sizeX2_5ep_lr5E5_batch16.h5',
+  [0.08540736138820648, 0.9145901203155518]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_15ep_lr3E5_batch16_new_jac.h5',
+  [0.05038551613688469, 0.9496116042137146, 0.9740671515464783]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_sizeX2_5ep_lr5E5_batch16_verdad.h5',
+  [0.052286066114902496, 0.9477115273475647]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_100ep_lr1E4_batch16_new_jac_VAR_MAYOR50_BATCH.h5',
+  [0.04432758688926697, 0.9556707739830017, 0.9772588610649109]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_dice_sizeX2_50ep_lr5E5_var_batch16_new_jac.h5',
+  [0.04308657348155975, 0.9569109678268433, 0.9779056906700134]],
+ ['../VisionLab/Tensorflow/model_reduced_jac_jac_sizeX2_10ep_lr5E5_batch16.h5',
+  [0.07830524444580078, 0.9216927289962769]]]
+
+
+
+1563/1563 [==============================] - 390s 246ms/step - loss: 0.1220 - jacard_coef: 0.8780
+1563/1563 [==============================] - 392s 250ms/step - loss: 0.0414 - jacard_coef: 0.9586 - DiceLoss: 0.9788
+1563/1563 [==============================] - 384s 245ms/step - loss: 0.0424 - jacard_coef: 0.9576 - DiceLoss: 0.9783
+1563/1563 [==============================] - 381s 243ms/step - loss: 0.0442 - jacard_coef: 0.9558 - DiceLoss: 0.9773
+1563/1563 [==============================] - 318s 202ms/step - loss: 0.0061 - jacard_coef: 0.8676
+1563/1563 [==============================] - 380s 243ms/step - loss: 0.0407 - jacard_coef: 0.9593 - DiceLoss: 0.9792
+1563/1563 [==============================] - 387s 248ms/step - loss: 0.0430 - jacard_coef: 0.9570 - DiceLoss: 0.9780
+1563/1563 [==============================] - 392s 250ms/step - loss: 0.0416 - jacard_coef: 0.9584 - DiceLoss: 0.9787
+1563/1563 [==============================] - 377s 241ms/step - loss: 0.0492 - jacard_coef: 0.9508
+1563/1563 [==============================] - 385s 246ms/step - loss: 0.0854 - jacard_coef: 0.9146
+1563/1563 [==============================] - 378s 241ms/step - loss: 0.0504 - jacard_coef: 0.9496 - DiceLoss: 0.9741
+1563/1563 [==============================] - 405s 259ms/step - loss: 0.0523 - jacard_coef: 0.9477
+1563/1563 [==============================] - 383s 244ms/step - loss: 0.0443 - jacard_coef: 0.9557 - DiceLoss: 0.9773
+1563/1563 [==============================] - 381s 243ms/step - loss: 0.0431 - jacard_coef: 0.9569 - DiceLoss: 0.9779
+1563/1563 [==============================] - 383s 245ms/step - loss: 0.0783 - jacard_coef: 0.9217
