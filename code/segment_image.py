@@ -95,7 +95,7 @@ def segmented_image(image,prediction):
     for i in divs:
         resultSeg[:,i-1:i+1] = 0
         
-    return [resultSeg,divs]
+    return [resultSeg,divs,f2,canny,opening]
 
 
 
@@ -110,7 +110,7 @@ def plate_characters(image,segModel,classModel):
     pred[pred >= 0.5] = 255
     pred[pred < 0.5] = 0
     
-    [resultSeg,divs] = segmented_image(img[0] * 255,pred)
+    [resultSeg,divs,perspective,canny,opening] = segmented_image(img[0] * 255,pred)
     
     segImg = []
     for ind in range(0,len(divs)):
@@ -132,6 +132,6 @@ def plate_characters(image,segModel,classModel):
     for i in resultMaps:
         resultCharacters.append(classes[np.argmax(i)])
         
-    return [resultCharacters,resultSeg,resultMaps,segImg]
+    return [resultCharacters,resultSeg,resultMaps,segImg,perspective,canny,opening]
     
     
