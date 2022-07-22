@@ -15,6 +15,9 @@ IMAGE_WIDTH = 144
 IMAGE_HEIGHT = 448
 IMAGE_WIDTH = 288
 
+ORG_HEIGHT = 1160
+ORG_WIDTH = 720
+
 def load_data(file_name):
     col_names = ['img','mask']
     df = pd.read_csv (file_name,sep=',',header=None,names=col_names)
@@ -23,16 +26,18 @@ def load_data(file_name):
 
     return images, masks
 
-def read_image(path):
+def read_image(path,resize=True):
     x = cv2.imread(path, cv2.IMREAD_COLOR)
-    x = cv2.resize(x, (IMAGE_WIDTH,IMAGE_HEIGHT))
+    if resize:
+        x = cv2.resize(x, (IMAGE_WIDTH,IMAGE_HEIGHT))
     x = x / 255.0
     x = x.astype(np.float32)
     return x
 
-def read_mask(path):
+def read_mask(path,resize=True):
     x = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-    x = cv2.resize(x, (IMAGE_WIDTH,IMAGE_HEIGHT), interpolation = cv2.INTER_NEAREST)
+    if resize:
+        x = cv2.resize(x, (IMAGE_WIDTH,IMAGE_HEIGHT), interpolation = cv2.INTER_NEAREST)
     x = x / 255.0
     x = np.expand_dims(x, axis=-1)
     x = x.astype(np.float32)
@@ -58,14 +63,35 @@ def preprocess(x, y):
 
     return images, masks
 
-def tf_dataset(x, y, batch_size=8, buffer_size=1000,shuffle=True):
+def preprocessNoResize(x, y):
+    def f(x, y):
+        x = x.decode()
+        y = y.decode()
+
+        x = read_image(x,resize=False)
+        y = read_mask(y,resize=False)
+
+        return x, y
+
+    images, masks = tf.numpy_function(f, [x, y], [tf.float32, tf.float32])
+
+    images.set_shape([ORG_HEIGHT, ORG_WIDTH, 3])
+    masks.set_shape([ORG_HEIGHT, ORG_WIDTH, 1])
+
+    return images, masks
+
+def tf_dataset(x, y, batch_size=8, buffer_size=1000,shuffle=True,resize=True):
     print(IMAGE_HEIGHT,IMAGE_WIDTH)
     dataset = tf.data.Dataset.from_tensor_slices((x, y))
-    dataset = dataset.map(preprocess)
+    if resize:
+        dataset = dataset.map(preprocess)
+    else:
+        dataset = dataset.map(preprocessNoResize)
     if shuffle == True:
         dataset = dataset.shuffle(buffer_size=buffer_size)
     dataset = dataset.batch(batch_size)
     return dataset
+
 
 if __name__ == "__main__":
     path = "train_dataset.csv"
