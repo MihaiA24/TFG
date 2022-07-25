@@ -5,7 +5,11 @@ from natsort import natsorted
 import collections  
 import sys
 
-# Comparo los resultados
+"""
+Comparo los resultados de las imagenes obtenidas. Obtengo los nombres de las imagenes obtenidas con el script runThread.py
+de cada una de las carpetas que comienzan con 10.* . Devuelve True los que coincidan totalmente con la matricula original de dataset
+y False los que no
+"""
 
 test_length = 25000
 # Leo en el array las imagenes originales y saco los indices correctos
